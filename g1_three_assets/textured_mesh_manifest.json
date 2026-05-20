@@ -1,0 +1,308 @@
+[
+  {
+    "body": "left_hip_pitch_link",
+    "file": "unitree_g1_description/meshes/leg/hip_pitch.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_hip_roll_link",
+    "file": "unitree_g1_description/meshes/leg/hip_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_hip_yaw_link",
+    "file": "unitree_g1_description/meshes/leg/hip_yaw.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_knee_link",
+    "file": "unitree_g1_description/meshes/leg/knee.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_ankle_pitch_link",
+    "file": "unitree_g1_description/meshes/leg/ankle_pitch.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_ankle_roll_link",
+    "file": "unitree_g1_description/meshes/leg/ankle_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_hip_pitch_link",
+    "file": "unitree_g1_description/meshes/leg/hip_pitch.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_hip_roll_link",
+    "file": "unitree_g1_description/meshes/leg/hip_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_hip_yaw_link",
+    "file": "unitree_g1_description/meshes/leg/hip_yaw.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_knee_link",
+    "file": "unitree_g1_description/meshes/leg/knee.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_ankle_pitch_link",
+    "file": "unitree_g1_description/meshes/leg/ankle_pitch.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_ankle_roll_link",
+    "file": "unitree_g1_description/meshes/leg/ankle_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "pelvis",
+    "file": "unitree_g1_description/meshes/body/pelvis.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "waist_yaw_link",
+    "file": "unitree_g1_description/meshes/body/waist_yaw.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "waist_roll_link",
+    "file": "unitree_g1_description/meshes/body/waist_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "torso_link",
+    "file": "unitree_g1_description/meshes/body/torso.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "logo_link",
+    "file": "unitree_g1_description/meshes/body/logo.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "head_link",
+    "file": "unitree_g1_description/meshes/body/head.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_shoulder_pitch_link",
+    "file": "unitree_g1_description/meshes/arm/shoulder_pitch.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_shoulder_roll_link",
+    "file": "unitree_g1_description/meshes/arm/shoulder_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_shoulder_yaw_link",
+    "file": "unitree_g1_description/meshes/arm/shoulder_yaw.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_elbow_link",
+    "file": "unitree_g1_description/meshes/arm/elbow.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_wrist_roll_link",
+    "file": "unitree_g1_description/meshes/arm/wrist_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_wrist_pitch_link",
+    "file": "unitree_g1_description/meshes/arm/wrist_pitch.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_wrist_yaw_link",
+    "file": "unitree_g1_description/meshes/arm/wrist_yaw.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_shoulder_pitch_link",
+    "file": "unitree_g1_description/meshes/arm/shoulder_pitch.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_shoulder_roll_link",
+    "file": "unitree_g1_description/meshes/arm/shoulder_roll.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_shoulder_yaw_link",
+    "file": "unitree_g1_description/meshes/arm/shoulder_yaw.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_elbow_link",
+    "file": "unitree_g1_description/meshes/arm/elbow.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_wrist_roll_link",
+    "file": "unitree_g1_description/meshes/arm/wrist_roll.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_wrist_pitch_link",
+    "file": "unitree_g1_description/meshes/arm/wrist_pitch.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_wrist_yaw_link",
+    "file": "unitree_g1_description/meshes/arm/wrist_yaw.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "left_rubber_hand",
+    "file": "unitree_g1_description/meshes/arm/hand.obj",
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  {
+    "body": "right_rubber_hand",
+    "file": "unitree_g1_description/meshes/arm/hand.obj",
+    "scale": [
+      1.0,
+      -1.0,
+      1.0
+    ]
+  }
+]
