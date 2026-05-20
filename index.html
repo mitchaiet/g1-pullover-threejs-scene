@@ -4,17 +4,44 @@
 html,body{margin:0;width:100vw;height:100%;height:100dvh;overflow:hidden;background:#000;overscroll-behavior:none;touch-action:none}
 body{position:fixed;inset:0}
 canvas{display:block;position:fixed;inset:0;width:100vw!important;height:100dvh!important;max-width:100vw;max-height:100dvh}
-#tapHint{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);font:600 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.08em;color:rgba(230,250,255,.72);background:rgba(0,0,0,.32);border:1px solid rgba(120,240,255,.25);border-radius:999px;padding:8px 12px;backdrop-filter:blur(8px);pointer-events:none;transition:opacity .5s}
-.ready #tapHint{opacity:.0}
+#tapHint{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);font:700 12px -apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;letter-spacing:.08em;color:rgba(230,250,255,.92);background:rgba(0,0,0,.45);border:1px solid rgba(120,240,255,.35);border-radius:999px;padding:10px 14px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:auto;user-select:none;box-shadow:0 0 28px rgba(35,220,255,.16);transition:opacity .35s, transform .35s}
+#tapHint:active{transform:translateX(-50%) scale(.96)}
+.audio-on #tapHint{opacity:0;transform:translateX(-50%) translateY(12px);pointer-events:none}
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script>
 </head><body>
-<div id="tapHint">LOADING LIVE 3D SCENE</div>
+<button id="tapHint" type="button">TAP FOR SOUND</button><audio id="danceAudio" src="dance_audio.mp3" preload="auto" loop playsinline></audio>
 <script type="module">
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+
+const tapHint = document.getElementById('tapHint');
+const danceAudio = document.getElementById('danceAudio');
+let audioReady = false;
+let audioStarted = false;
+function syncAudioToScene(){
+  if(!danceAudio || !MOTION || !MOTION.numFrames || !MOTION.fps) return;
+  const sceneDur = MOTION.numFrames / MOTION.fps;
+  if(sceneDur > 0 && isFinite(sceneDur) && Math.abs((danceAudio.currentTime % sceneDur)) > sceneDur) danceAudio.currentTime = 0;
+}
+async function startAudio(){
+  if(!danceAudio) return;
+  try{
+    danceAudio.volume = 0.92;
+    await danceAudio.play();
+    audioStarted = true;
+    document.body.classList.add('audio-on');
+    tapHint.textContent = 'SOUND ON';
+  }catch(err){
+    tapHint.textContent = audioReady ? 'TAP FOR SOUND' : 'LOADING AUDIO';
+  }
+}
+tapHint.addEventListener('click', startAudio);
+tapHint.addEventListener('touchend', (e)=>{ e.preventDefault(); startAudio(); }, {passive:false});
+danceAudio.addEventListener('canplaythrough', ()=>{ audioReady = true; if(!audioStarted) tapHint.textContent='TAP FOR SOUND'; });
+danceAudio.addEventListener('error', ()=>{ tapHint.textContent='AUDIO UNAVAILABLE'; });
 
 let viewW = 720, viewH = 1280;
 const renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true, powerPreference:'high-performance'});
@@ -269,9 +296,10 @@ window.__renderStill = function(t=0, beat=.3, high=.2){
 function animate(now=performance.now()){
   window.__frameCount = (window.__frameCount || 0) + 1;
   resizeToViewport();
-  const t = now * 0.001;
+  const t = (audioStarted && danceAudio && !danceAudio.paused) ? danceAudio.currentTime : now * 0.001;
   const beat = 0.5 + 0.5 * Math.sin(t * 3.15);
   const high = 0.5 + 0.5 * Math.sin(t * 8.2 + 0.9);
+  window.__audioStarted = audioStarted;
   window.__renderStill(t, beat, high);
 }
 function startLoop(){
@@ -283,6 +311,7 @@ function startLoop(){
 }
 loadAssets().then(()=>{
   document.body.classList.add('ready');
+  if(!audioStarted) tapHint.textContent = 'TAP FOR SOUND';
   startLoop();
 });
 </script></body></html>
